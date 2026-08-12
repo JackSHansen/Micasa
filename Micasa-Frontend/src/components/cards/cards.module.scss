@@ -1,0 +1,13 @@
+.cards {
+    display: flex;
+    flex-direction: column;
+    padding: 8px;
+    max-width: 400px;
+    border:solid rgba(20, 20, 20, 0.1);
+    box-shadow: 2px 4px 8px 2px rgba(20, 20, 20, 0.1);
+    gap: 8px;
+    img {
+        width: 100%;
+        object-fit: cover;
+    }
+}
