@@ -1,0 +1,32 @@
+@use "../../layout/global.scss" as globals;
+
+.navstyle {
+  height: auto;
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+  background-color: globals.$color-raisin;
+
+    figure {
+        margin: 0;
+    }
+
+.logo {
+    width: 10vw;
+}
+
+.navList {
+    display: flex;
+    gap: 14px;
+    justify-content: end;
+    margin: 32px;
+
+    li {
+        list-style-type: none;
+    }
+}
+
+.navLink {
+    text-decoration: none;
+    color: white;
+}
+}
