@@ -5,6 +5,7 @@ import Navbar from "../components/navbar/navbar";
 import "../layout/index.scss";
 import { useEstates } from "@/Hooks/useEstatesApi";
 import Cards from "@/components/cards/cards";
+import { FlexContainer } from "@/components/flexcontainer/flexcontainer";
 
 export default function Home() {
   const { data, isLoading, error } = useEstates();
@@ -22,11 +23,17 @@ export default function Home() {
     <>
       <Navbar />
       <Slider />
-      {isLoading ? <p>Henter boliger...</p> : null}
-      {error ? <p>{error}</p> : null}
-      {randomEstates.map((estate) => (
-        <Cards key={estate.id} estate={estate} />
-      ))}
+      <FlexContainer
+        gap="8px"
+        dir="row"
+        style={{ position: "absolute", top: "40vh", }}
+      >
+        {isLoading ? <p>Henter boliger...</p> : null}
+        {error ? <p>{error}</p> : null}
+        {randomEstates.map((estate) => (
+          <Cards key={estate.id} estate={estate} />
+        ))}
+      </FlexContainer>
     </>
   );
 }
